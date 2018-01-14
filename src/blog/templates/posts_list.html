@@ -1,0 +1,11 @@
+{% for post in posts %}
+<div class="post col-md-6">
+    <a href="{% url 'post_detail_page' post.user post.pk %}" title="{{ post.title }}">
+        <img class="img-responsive" src="{{ post.image }}" alt="{{ post.title }}" title="{{ post.title }}" height="300">
+        <h4 class="atribute_post">{{ post.title }}</h4>
+        <p class="atribute_post">{{ post.intro }}</p>
+        <p class="atribute_post">Autor: {{ post.user }}</p>
+        <p class="atribute_post">Publicado el: {{ post.published_date }}</p>
+    </a>
+</div>
+{% endfor %}

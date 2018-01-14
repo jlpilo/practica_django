@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head_title %} Login {% endblock %}
+
+{% block content %}
+
+<h1>Acceder a tu blog</h1>
+
+{% if messages %}
+    {% for message in messages %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+{% endif %}
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+        <button type="submit">Login</button>
+    </div>
+</form>
+
+{% endblock %}

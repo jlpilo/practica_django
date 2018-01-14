@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block head_title %} Nueva Entrada {% endblock %}
+
+{% block content %}
+
+    <h1>Crear entrada</h1>
+
+    {% if messages %}
+        {% for message in messages %}
+            {% autoescape off %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endautoescape %}
+        {% endfor %}
+    {% endif %}
+
+    <form method="post" novalidate>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Añadir entrada</button>
+    </form>
+
+{% endblock %}

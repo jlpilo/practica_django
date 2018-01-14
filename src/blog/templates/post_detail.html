@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block head_title %} {{ movie.title }} {% endblock %}
+
+{% block content %}
+<section>
+    <h1>{{ post.title }}</h1>
+    <h4>Autor: {{ post.user }}</h4>
+    <img class="img-post" src="{{ post.image }}" alt="{{ post.title }}" title="{{ post.title }}" width="300">
+    <p>{{ post.intro }}</p>
+    <p>{{ post.content }}</p>
+    <ul>
+        <li>
+            <strong>Categoría:</strong> {{ post.category.name }}
+        </li>
+        <li>
+            <strong>Fecha de publicación:</strong> {{ post.published_date | date:"d/m/Y" }}
+        </li>
+    </ul>
+</section>
+
+{% endblock %}

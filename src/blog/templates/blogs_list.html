@@ -1,0 +1,10 @@
+<h3>Blogs</h3>
+<ul>
+{% for blog in blogs %}
+    <li>
+        <a href="{% url 'post_by_blog_page' blog.username %}" title="{{ blog.username }}">
+            {{ blog.username }}
+        </a>
+    </li>
+{% endfor %}
+</ul>

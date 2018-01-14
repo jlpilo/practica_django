@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block head_title %} Blog list {% endblock %}
+
+{% block content %}
+
+    <h1>Todos los blogs disponibles</h1>
+
+    {% include "blogs_list.html" with posts=object_list %}
+
+{% endblock %}

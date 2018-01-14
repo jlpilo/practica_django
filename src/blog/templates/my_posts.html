@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block head_title %} Blog de {{ bloguser }} {% endblock %}
+
+{% block content %}
+    <h1>Blog de {{ bloguser }}</h1>
+
+
+    {% include "posts_list.html" with posts=object_list %}
+
+{% endblock %}
